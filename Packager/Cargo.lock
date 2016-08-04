@@ -1,0 +1,29 @@
+[root]
+name = "Packager-GUI"
+version = "0.1.0"
+dependencies = [
+ "iup 0.0.3 (git+https://github.com/dcampbell24/iup-rust)",
+]
+
+[[package]]
+name = "iup"
+version = "0.0.3"
+source = "git+https://github.com/dcampbell24/iup-rust#3daddd1fb655f485f2255fce340140d8fe72f3e0"
+dependencies = [
+ "iup-sys 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "iup-sys"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+

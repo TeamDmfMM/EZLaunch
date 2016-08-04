@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Cargo &lt;Packager-GUI&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.1.12" />
+      <root url="file://$USER_HOME$/.cargo/git/checkouts/iup-rust-848a7d570fe350d7/master" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/iup-sys-0.0.3" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
