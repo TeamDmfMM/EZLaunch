@@ -1,28 +1,75 @@
-# Getting a dev env ready
+# Building the packager
+_(also known as the Creator)_
 
-## What you need
+## Requirements
 
-You will need:
- - rust
- - iup
+### Windows
 
-### Rust
-Just get the newest version of rust and cargo
+ - 64bit
+ - rust (cargo and rustc)
+ - ubuntu for windows
 
-### IUP
-todo: give instructions
+#### Ubuntu on Windows requirements
 
-## Using cargo
+ - gcc
+ - deps for conrod
 
-Run `cargo build` to build the gui and the the actual packager.
-After this is done (on windows), make sure to copy all the DLLs in build_libs to target/debug
+### Linux/Mac
 
-On other systems, just make sure you have the libraries accessible.
+ - rust (cargo and rustc)
+ - working gcc
+ - deps for conrod
 
-Then, just run the generated executables.
+## Setting up dev env
 
-If you need to make a windowed version, use `cargo --bin packager_gui -- -mwindows` on gcc.
+### Windows
 
-# Building a release
+---
 
-Similar to above, but make sure you use a windowed version for packager_gui, and build packager separately.
+**Run all commands inside the Ubuntu on Windows `bash` shell**
+
+---
+
+You will need to run `cargo update` from the root of this folder
+in order to get all the required packages.
+
+Next, do a test build with `cargo build --target=x86_64-pc-windows-gnu`. Once this finishes, make sure
+to copy the `packager_gui.exe.manifest` file to the output directory. The gui should now run.
+
+### Linux/Mac
+
+Set up the project as any other rust project.
+
+## Creating a build
+
+### Windows
+
+---
+
+**Run all commands inside the Ubuntu on Windows `bash` shell**
+
+---
+
+In order to build the packager binaries, use the commands below
+
+#### `packager_gui.exe`
+
+When building the gui, make sure to copy the manifest file as well.
+
+```
+$ cargo rustc --target=x86_64-pc-windows-gnu --release --bin packager_gui -- -C link_args="-Wl,--subsystem,windows"
+```
+
+#### `packager.exe`
+
+```
+$ cargo build --target=x86_64-pc-windows-gnu --release --bin packager
+```
+
+### Linux
+
+To create the binaries, just run `cargo build`
+
+### Mac
+
+Same as linux.
