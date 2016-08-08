@@ -33,7 +33,7 @@ _(also known as the Creator)_
 You will need to run `cargo update` from the root of this folder
 in order to get all the required packages.
 
-Next, do a test build with `cargo build --target=x86_64-pc-windows-gnu`. Once this finishes, make sure
+Next, do a test build with `cargo build --target x86_64-pc-windows-gnu`. Once this finishes, make sure
 to copy the `packager_gui.exe.manifest` file to the output directory. The gui should now run.
 
 ### Linux/Mac
@@ -54,16 +54,14 @@ In order to build the packager binaries, use the commands below
 
 #### `packager_gui.exe`
 
-When building the gui, make sure to copy the manifest file as well.
-
 ```
-$ cargo rustc --target=x86_64-pc-windows-gnu --release --bin packager_gui -- -C link_args="-Wl,--subsystem,windows"
+$ cargo rustc --target x86_64-pc-windows-gnu --release --bin packager_gui -- -C link_args="-Wl,--subsystem,windows"
 ```
 
 #### `packager.exe`
 
 ```
-$ cargo build --target=x86_64-pc-windows-gnu --release --bin packager
+$ cargo build --target x86_64-pc-windows-gnu --release --bin packager
 ```
 
 ### Linux

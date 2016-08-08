@@ -9,6 +9,9 @@ pistoncore-input = "0.13.0"
 piston_window = "0.51"
 piston2d-graphics = "0.17"
 find_folder = "*"
+serde_json = "0.8"
+serde_macros = "0.8"
+serde = "*"
 
 [[bin]]
 name = "packager_gui"

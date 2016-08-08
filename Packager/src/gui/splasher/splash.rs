@@ -12,12 +12,10 @@ use piston_window::Window;
 use piston_window::AdvancedWindow;
 use splasher::consts;
 
-pub fn show_splash() {
-    let thing_is_a_ctime_test = consts::WIDTH;
-
+pub fn show_splash(length: i32) {
     let mut window: PistonWindow =
         piston_window::WindowSettings::new("EZLaunch Creator",
-            [300 as u32, 512 as u32]).opengl(piston_window::OpenGL::V3_2)
+            [consts::WIDTH, consts::HEIGHT]).opengl(piston_window::OpenGL::V3_2)
             .exit_on_esc(false).vsync(true).samples(4).decorated(false).build().unwrap();
 
     window.set_ups(60);
@@ -37,8 +35,6 @@ pub fn show_splash() {
 
     let w: i32 = 300;
     let h: i32 = 512;
-
-
 
     let mut counter = 0;
     window.set_position((200, 65));
@@ -63,7 +59,7 @@ pub fn show_splash() {
             Image::new().w_h(w as f64, h as f64).middle().set(SPLASH, &mut ui);
         }));
 
-        if counter > 500 {
+        if counter > length {
             window.set_should_close(true);
         }
 
